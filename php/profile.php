@@ -6,6 +6,8 @@
 require './vendor/autoload.php';
 
 // Get the user inputs
+$name = $_POST['name'];
+$age = $_POST['age'];
 $dob = $_POST['dob'];
 $address = $_POST['address'];
 $contact = $_POST['contact'];
@@ -13,12 +15,14 @@ $contact = $_POST['contact'];
 // Connect to the MongoDB server
 $mongo = new MongoClient();
 
-// Select the database and collection -- -- 'reg_mongo' is the local mongoDB name and...
+// Select the database and collection -- -- 'regmongo' is the local mongoDB name and...
 // 'user_profiles' is the collection that I use to store the user profile updating details.
-$collection = $mongo->reg_mongo->user_profiles;
+$collection = $mongo->regmongo->user_profiles;
 
 // Insert the document
 $data = array(
+    'name' => $name,
+    'age' => $age,
     'dob' => $dob,
     'address' => $address,
     'contact' => $contact,
