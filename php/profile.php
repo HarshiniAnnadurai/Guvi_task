@@ -3,7 +3,7 @@
 //we must include mongoDB driver to our project to work.
 // composer mongodb/mongodb:version is the command we use in CLI to install it in our project
 // Then, we import autoload.php to the php code.
-require './vendor/autoload.php';
+require '../vendor/autoload.php';
 
 // Connect to the MongoDB server
 $mongo = new MongoDB\Client("mongodb://localhost:27017/");
