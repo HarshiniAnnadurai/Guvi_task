@@ -6,6 +6,8 @@ const form = document.getElementById("myForm");
     	event.preventDefault();
 
     // Get the user inputs
+    const name = form.elements["name"].value;
+    const age = form.elements["age"].value;
     const dob = form.elements["dob"].value;
     const address = form.elements["address"].value;
     const contact = form.elements["contact"].value;
@@ -18,7 +20,7 @@ const form = document.getElementById("myForm");
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     // Setting up the request data...
-    const data = "dob=" + encodeURIComponent(dob) + "&address=" + encodeURIComponent(address) + "&contact=" + encodeURIComponent(contact);
+    const data = "name=" + encodeURIComponent(name) + "&age=" + encodeURIComponent(age) + "&dob=" + encodeURIComponent(dob) + "&address=" + encodeURIComponent(address) + "&contact=" + encodeURIComponent(contact);
 
     // Sending the request...
     xhr.send(data);
