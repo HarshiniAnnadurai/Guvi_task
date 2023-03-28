@@ -5,15 +5,20 @@
 // Then, we import autoload.php to the php code.
 require './vendor/autoload.php';
 
+if(isset($name)||isset($age)||isset($dob)||isset($address)||isset($contact)){
+    
 // Get the user inputs
 $name = $_POST['name'];
 $age = $_POST['age'];
 $dob = $_POST['dob'];
 $address = $_POST['address'];
 $contact = $_POST['contact'];
+}
+
+
 
 // Connect to the MongoDB server
-$mongo = new MongoClient();
+$mongo = new MongoClient("mongodb://localhost:27017/");
 
 // Select the database and collection -- -- 'regmongo' is the local mongoDB name and...
 // 'user_profiles' is the collection that I use to store the user profile updating details.
